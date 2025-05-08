@@ -1,14 +1,15 @@
-# Use the official Tomcat base image
-FROM tomcat:9.0
+# Use Maven to build the project
+FROM maven:3.8.6-eclipse-temurin-17 AS build
 
-# Remove the default web apps (optional but cleaner)
+COPY . /app
+WORKDIR /app
+RUN mvn clean package
+
+# Tomcat 10.1 supports Jakarta EE 9+
+FROM tomcat:10.1
+
 RUN rm -rf /usr/local/tomcat/webapps/*
+COPY --from=build /app/target/*.war /usr/local/tomcat/webapps/ROOT.war
 
-# Copy your WAR file into the ROOT of the webapps directory
-COPY target/producer_consumer_problem.war /usr/local/tomcat/webapps/ROOT.war
-
-# Expose port 8080 (Render automatically handles this)
 EXPOSE 8080
-
-# Start Tomcat
 CMD ["catalina.sh", "run"]

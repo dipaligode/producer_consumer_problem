@@ -140,7 +140,7 @@
             <div class="flex justify-center gap-4 mt-6">
                 <a href="?action=start" class="bg-green-500 text-white px-4 py-2 rounded-full shadow hover:bg-green-600">▶️ Start</a>
                 <a href="?action=stop" class="bg-yellow-500 text-white px-4 py-2 rounded-full shadow hover:bg-yellow-600">⏸️ Stop</a>
-                <a href="?action=restart" class="bg-red-500 text-white px-4 py-2 rounded-full shadow hover:bg-red-600">🔁 Restart</a>
+                <a href="?action=restart" class="bg-red-500 text-white px-4 py-2 rounded-full shadow hover:bg-red-600">🔁 Reset</a>
             </div>
         </div>
 
@@ -182,7 +182,7 @@
             </script>
         </div>
     </div>
-    <a href="homee.html" class="fixed bottom-6 right-6 group">
+    <a href="index.html" class="fixed bottom-6 right-6 group">
         <div class="bg-indigo-600 text-white px-6 py-3 rounded-full shadow-lg transform transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:bg-indigo-700">
           ⬅ Back to Home
         </div>

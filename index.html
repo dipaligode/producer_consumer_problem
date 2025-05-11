@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Producer-Consumer Project</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes fadeInUp {
+      0% { transform: translateY(30px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    .fade-in-up { animation: fadeInUp 1s ease-out both; }
+
+    .button-hover:hover {
+      transform: scale(1.05);
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .bounce-in {
+      animation: bounceIn 1s ease-in-out;
+    }
+
+    @keyframes bounceIn {
+      0% { transform: scale(0.3); opacity: 0; }
+      50% { transform: scale(1.1); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+
+    .fade-appear {
+      animation: fadeInUp 1s ease-out forwards;
+    }
+
+    .background-animation {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://via.placeholder.com/1920x1080');
+      background-size: cover;
+      background-position: center;
+      filter: blur(8px);
+      z-index: -1;
+    }
+  </style>
+</head>
+<body class="relative min-h-screen bg-gradient-to-br from-indigo-50 via-gray-100 to-teal-50 flex flex-col items-center overflow-x-hidden font-sans">
+  <div class="background-animation"></div>
+
+  <div class="bg-white/90 backdrop-blur-lg shadow-2xl rounded-3xl p-6 sm:p-8 md:p-12 lg:p-16 max-w-6xl w-full mx-4 flex flex-col items-center gap-8 fade-in-up my-6 sm:my-8">
+
+    <!-- Title Section -->
+    <div class="flex flex-col sm:flex-row items-center gap-4 mb-4 text-center sm:text-left">
+      <img src="download.png" alt="Project Logo" class="h-14 w-14 sm:h-16 sm:w-16 md:h-20 md:w-20 object-contain">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-indigo-800">
+        Modern College Of Engineering, Pune
+      </h1>
+    </div>
+
+    <h2 class="text-2xl sm:text-3xl font-semibold text-teal-700 text-center fade-appear">
+      OS & CN Project Competition 2025
+    </h2>
+    <h3 class="text-xl sm:text-2xl font-semibold text-gray-700 text-center fade-appear">
+      Topic: <span class="text-indigo-600">Producer-Consumer Problem</span>
+    </h3>
+
+    <!-- Description -->
+    <p class="text-base sm:text-lg md:text-xl text-gray-700 text-center leading-relaxed px-4 sm:px-10 md:px-20 fade-appear">
+      The <strong>Producer-Consumer Problem</strong> is a classic example of synchronization in multi-processing,
+      ensuring that the producer and consumer processes use a common buffer efficiently without conflicts or data corruption.
+    </p>
+
+    <!-- Theory Section -->
+    <div class="w-full bg-gray-100 rounded-2xl shadow-inner p-6 sm:p-8 fade-in-up">
+      <h4 class="text-xl sm:text-2xl font-bold text-center text-indigo-700 mb-6">
+        💡 Theory: Producer-Consumer Problem (Short Points)
+      </h4>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 text-gray-800 text-base sm:text-lg leading-relaxed">
+        <div class="bg-white p-4 sm:p-6 rounded-xl shadow-md border-l-4 border-indigo-400">
+          <strong>🔁 Problem:</strong> Producer and Consumer share a fixed-size buffer. Need synchronization to avoid conflict.
+        </div>
+        <div class="bg-white p-4 sm:p-6 rounded-xl shadow-md border-l-4 border-teal-400">
+          <strong>📦 Shared Buffer:</strong> Temporary storage where producer adds and consumer removes items.
+        </div>
+        <div class="bg-white p-4 sm:p-6 rounded-xl shadow-md border-l-4 border-indigo-400">
+          <strong>🧑‍🔧 Producer:</strong> Produces items and adds to buffer. Waits if buffer is full.
+        </div>
+        <div class="bg-white p-4 sm:p-6 rounded-xl shadow-md border-l-4 border-teal-400">
+          <strong>🧑‍🏭 Consumer:</strong> Consumes items from buffer. Waits if buffer is empty.
+        </div>
+        <div class="bg-white p-4 sm:p-6 rounded-xl shadow-md border-l-4 border-indigo-400">
+          <strong>🔒 Synchronization:</strong> Ensures buffer is accessed safely by one process at a time.
+        </div>
+        <div class="bg-white p-4 sm:p-6 rounded-xl shadow-md border-l-4 border-teal-400">
+          <strong>🚫 Buffer Full:</strong> Producer stops and waits. Resumes when space is available.
+        </div>
+        <div class="bg-white p-4 sm:p-6 rounded-xl shadow-md border-l-4 border-indigo-400">
+          <strong>🈳 Buffer Empty:</strong> Consumer stops and waits. Resumes when new item is produced.
+        </div>
+        <div class="bg-white p-4 sm:p-6 rounded-xl shadow-md border-l-4 border-teal-400">
+          <strong>🛠 Tools Used:</strong> Java, JSP, HTML, Tailwind CSS, Semaphores, Threading.
+        </div>
+      </div>
+    </div>
+
+    <!-- Simulation Mode -->
+    <h3 class="text-xl sm:text-2xl font-semibold text-teal-700 mt-6 sm:mt-10 bounce-in">
+      🎮 Choose Simulation Mode
+    </h3>
+    <div class="flex flex-col sm:flex-row justify-center items-center gap-6 mt-4">
+      <a href="manual-mode.jsp" class="bg-indigo-600 text-white text-lg font-bold py-3 px-10 rounded-full shadow-md hover:bg-indigo-700 button-hover">
+        🚀 Manual Mode
+      </a>
+      <a href="auto-mode.jsp" class="bg-teal-600 text-white text-lg font-bold py-3 px-10 rounded-full shadow-md hover:bg-teal-700 button-hover">
+        🔄 Auto Mode
+      </a>
+    </div>
+
+    <!-- Team Members -->
+    <h3 class="text-xl sm:text-2xl font-semibold text-teal-700 mt-6 sm:mt-10 fade-appear">
+      👥 Meet Our Team
+    </h3>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 mt-2 sm:mt-4 text-center fade-appear">
+      <div class="text-sm sm:text-lg font-medium text-gray-800">Dipali Gode</div>
+      <div class="text-sm sm:text-lg font-medium text-gray-800">Chetna Uikey</div>
+      <div class="text-sm sm:text-lg font-medium text-gray-800">Abha Singh</div>
+      <div class="text-sm sm:text-lg font-medium text-gray-800">Aparna Singh</div>
+    </div>
+
+  </div>
+</body>
+</html>

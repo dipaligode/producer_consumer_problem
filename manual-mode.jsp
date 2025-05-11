@@ -183,7 +183,7 @@
             </script>
         </div>
     </div>
-    <a href="homee.html" class="fixed bottom-6 right-6 group">
+    <a href="index.html" class="fixed bottom-6 right-6 group">
         <div class="bg-indigo-600 text-white px-6 py-3 rounded-full shadow-lg transform transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:bg-indigo-700">
           ⬅ Back to Home
         </div>
